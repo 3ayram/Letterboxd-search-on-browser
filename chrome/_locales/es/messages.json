@@ -1,0 +1,56 @@
+{
+  "extensionName": {
+    "message": "Búsqueda en Letterboxd"
+  },
+  "extensionDescription": {
+    "message": "Buscar el texto seleccionado en Letterboxd"
+  },
+  "searchOnLetterboxd": {
+    "message": "Buscar \"%s\" en Letterboxd"
+  },
+  "popupTitle": {
+    "message": "Búsqueda en Letterboxd"
+  },
+  "popupPlaceholder": {
+    "message": "Escribe el nombre de una película..."
+  },
+  "popupSearchBtn": {
+    "message": "Buscar"
+  },
+  "optTitle": {
+    "message": "Configuración de Búsqueda de Letterboxd"
+  },
+  "optHeading": {
+    "message": "Configuración de la Extensión"
+  },
+  "optImdbLabel": {
+    "message": "Comportamiento del Botón de IMDb"
+  },
+  "optImdbDesc": {
+    "message": "Abre la página de IMDb en una nueva pestaña al hacer clic en el ícono de IMDb en Letterboxd."
+  },
+  "optLbLabel": {
+    "message": "Comportamiento del Botón de Letterboxd"
+  },
+  "optLbDesc": {
+    "message": "Abre la página de Letterboxd en una nueva pestaña al hacer clic en el ícono de Letterboxd en IMDb."
+  },
+  "optCtxLabel": {
+    "message": "Comportamiento del Menú Contextual"
+  },
+  "optCtxDesc": {
+    "message": "Abre las búsquedas del menú contextual silenciosamente en segundo plano."
+  },
+  "optGoogleLabel": {
+    "message": "Integración con Búsqueda de Google"
+  },
+  "optGoogleDesc": {
+    "message": "Añade un ícono de Letterboxd junto a los enlaces de IMDb en los resultados de Google."
+  },
+  "optSaveBtn": {
+    "message": "Guardar configuración"
+  },
+  "optSaved": {
+    "message": "¡Configuración guardada!"
+  }
+}

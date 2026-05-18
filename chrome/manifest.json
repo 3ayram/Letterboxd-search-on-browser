@@ -1,0 +1,68 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extensionName__",
+  "version": "1.4.1",
+  "description": "__MSG_extensionDescription__",
+  "default_locale": "en",
+  "author": "Bayram EREN",
+  "homepage_url": "https://github.com/3ayram/",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "background": {
+    "service_worker": "eventPage.js"
+  },
+  "permissions": [
+    "contextMenus",
+    "storage"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.imdb.com/title/*"],
+      "css": ["imdb.css"],
+      "js": ["imdb.js"]
+    },
+    {
+      "matches": [
+        "*://*.google.com/search*",
+        "*://*.google.com.tr/search*",
+        "*://*.google.co.uk/search*",
+        "*://*.google.de/search*",
+        "*://*.google.es/search*",
+        "*://*.google.fr/search*",
+        "*://*.google.it/search*"
+      ],
+      "js": ["google.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icon16.png", "icon32.png", "icons8-imdb-48.png"],
+      "matches": [
+        "*://*.imdb.com/*", 
+        "*://letterboxd.com/*", 
+        "*://*.google.com/*", 
+        "*://*.google.com.tr/*",
+        "*://*.google.co.uk/*",
+        "*://*.google.de/*",
+        "*://*.google.es/*",
+        "*://*.google.fr/*",
+        "*://*.google.it/*"
+      ]
+    }
+  ]
+}

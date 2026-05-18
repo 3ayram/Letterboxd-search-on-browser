@@ -1,0 +1,19 @@
+#imdb-letterboxd-icon {
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 12px;
+  vertical-align: middle;
+  transition: transform 0.2s ease-in-out;
+}
+
+#imdb-letterboxd-icon:hover {
+  transform: scale(1.1);
+}
+
+#imdb-letterboxd-icon img {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 4px;
+}

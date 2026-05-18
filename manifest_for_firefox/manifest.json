@@ -1,0 +1,32 @@
+{
+	"manifest_version": 2,
+	"name": "__MSG_extensionName__",
+	"version": "1.0.3",
+	"description": "__MSG_extensionDescription__",
+	"default_locale": "en",
+	"developer": {
+		"name": "Bayram EREN",
+		"url": "https://github.com/3ayram/"
+	},
+	"applications": {
+		"gecko": {
+			"id": "ietisim@bayrameren.net"
+		}
+	},
+	"homepage_url": "https://github.com/3ayram/",
+	"icons": {
+		"16": "icon16.png",
+		"32": "icon32.png",
+		"48": "icon48.png",
+		"96": "icon96.png",
+		"128": "icon128.png"
+	},
+	"background": {
+		"scripts": [
+			"eventPage.js"
+		]
+	},
+	"permissions": [
+		"contextMenus"
+	]
+}

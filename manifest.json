@@ -1,0 +1,75 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_extensionName__",
+  "version": "1.4.1",
+  "description": "__MSG_extensionDescription__",
+  "default_locale": "en",
+  "developer": {
+    "name": "Bayram EREN",
+    "url": "https://github.com/3ayram"
+  },
+  "homepage_url": "https://github.com/3ayram/",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "background": {
+    "scripts": [
+      "eventPage.js"
+    ]
+  },
+  "permissions": [
+    "contextMenus",
+    "storage"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.imdb.com/title/*"],
+      "css": ["imdb.css"],
+      "js": ["imdb.js"]
+    },
+    {
+      "matches": ["*://letterboxd.com/film/*", "*://www.letterboxd.com/film/*"],
+      "css": ["letterboxd.css"],
+      "js": ["letterboxd.js"]
+    },
+    {
+      "matches": [
+        "*://*.google.com/search*",
+        "*://*.google.com.tr/search*",
+        "*://*.google.co.uk/search*",
+        "*://*.google.de/search*",
+        "*://*.google.es/search*",
+        "*://*.google.fr/search*",
+        "*://*.google.it/search*"
+      ],
+      "js": ["google.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "icon16.png",
+    "icon32.png",
+    "icons8-imdb-48.png"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{d7b0fd82-5f3c-4b3b-8858-f19b8646cfe2}",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
+}

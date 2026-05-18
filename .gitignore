@@ -1,0 +1,12 @@
+# Eklenti derleme klasörleri ve dosyaları
+web-ext-artifacts/
+*.zip
+
+# Node.js
+node_modules/
+package-lock.json
+package.json
+
+# İşletim sistemi
+.DS_Store
+Thumbs.db
