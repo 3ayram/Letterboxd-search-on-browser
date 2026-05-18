@@ -17,7 +17,7 @@ A powerful browser extension that seamlessly bridges your movie discovery experi
 ## Installation
 
 ### Firefox
-You can download the official add-on from the Mozilla Add-ons store (link coming soon) or build it manually from this repository.
+You can download the official add-on from the [Mozilla Add-ons store](https://addons.mozilla.org/tr/firefox/addon/letterboxd-search-click/) or build it manually from this repository.
 
 ### Chrome
 You can download the official extension from the Chrome Web Store (link coming soon) or load it unpacked via `chrome://extensions/`.
