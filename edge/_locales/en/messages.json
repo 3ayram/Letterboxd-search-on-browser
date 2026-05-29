@@ -153,7 +153,7 @@
     "message": "Auto-Redirect (Streaming & IMDb)"
   },
   "optAutoRedirectDesc": {
-    "message": "When on Netflix, Max, Prime, MUBI, Disney, Apple or IMDb pages, clicking the toolbar icon redirects directly to Letterboxd without showing the popup."
+    "message": "When on supported streaming platforms or IMDb pages, clicking the toolbar icon redirects directly to Letterboxd without showing the popup."
   },
   "labelAutoRedirect": {
     "message": "Auto-Redirect (Streaming/IMDb)"
@@ -171,7 +171,7 @@
     "message": "🚀 1-Click Search: Quickly search movies from any tab."
   },
   "pinAdvantage2": {
-    "message": "🍿 Auto-Redirect: Jump directly to Letterboxd from content pages on Netflix, Prime, Max, IMDb, etc."
+    "message": "🍿 Auto-Redirect: Jump directly to Letterboxd from content pages on supported streaming platforms and IMDb."
   },
   "pinAdvantage3": {
     "message": "▶️ Smart Badge: See a badge indicator when a movie is detected on a supported platform."

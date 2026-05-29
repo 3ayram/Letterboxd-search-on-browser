@@ -153,7 +153,7 @@
     "message": "Otomatik Yönlendirme (Streaming & IMDb)"
   },
   "optAutoRedirectDesc": {
-    "message": "Netflix, Max, Prime Video, MUBI, Disney+, Apple TV+ ve IMDb sayfalarındayken toolbar ikonuna tıkladığınızda popup penceresi açılmadan direkt Letterboxd sayfasına yönlendirir."
+    "message": "Desteklenen yayın platformlarında ve IMDb sayfalarındayken toolbar ikonuna tıkladığınızda popup penceresi açılmadan direkt Letterboxd sayfasına yönlendirir."
   },
   "labelAutoRedirect": {
     "message": "Direkt Yönlendir (Streaming/IMDb)"
@@ -171,7 +171,7 @@
     "message": "🚀 Tek Tıkla Arama: Her sekmeden hızlıca film arama imkanı."
   },
   "pinAdvantage2": {
-    "message": "🍿 Otomatik Yönlendirme: Netflix, Prime, Max, IMDb gibi platformlarda film sayfasındayken tek tıkla doğrudan Letterboxd'a gitme."
+    "message": "🍿 Otomatik Yönlendirme: Desteklenen yayın platformları ve IMDb'de film sayfasındayken tek tıkla doğrudan Letterboxd'a gitme."
   },
   "pinAdvantage3": {
     "message": "▶️ Akıllı Rozet: Desteklenen bir platformda film açıkken ikon üzerinde beliren uyarı rozeti ile anında durum tespiti."
