@@ -1,0 +1,182 @@
+{
+  "extensionName": {
+    "message": "Assistant Letterboxd"
+  },
+  "extensionDescription": {
+    "message": "Intégrez parfaitement Letterboxd et IMDb. Affichez les notes IMDb sur Letterboxd."
+  },
+  "searchOnLetterboxd": {
+    "message": "Recherche letterboxd pour '%s'"
+  },
+  "popupTitle": {
+    "message": "Recherche Letterboxd"
+  },
+  "popupPlaceholder": {
+    "message": "Entrez le nom d'un film..."
+  },
+  "popupSearchBtn": {
+    "message": "Recherche"
+  },
+  "optTitle": {
+    "message": "Paramètres de Recherche Letterboxd"
+  },
+  "optHeading": {
+    "message": "Paramètres de l'extension"
+  },
+  "optImdbLabel": {
+    "message": "Comportement du bouton IMDb"
+  },
+  "optImdbDesc": {
+    "message": "Ouvrir la page IMDb dans un nouvel onglet lorsque vous cliquez sur l'icône IMDb sur Letterboxd."
+  },
+  "optLbLabel": {
+    "message": "Comportement du bouton Letterboxd"
+  },
+  "optLbDesc": {
+    "message": "Ouvrir la page Letterboxd dans un nouvel onglet lorsque vous cliquez sur l'icône Letterboxd sur IMDb."
+  },
+  "optCtxLabel": {
+    "message": "Comportement du menu contextuel"
+  },
+  "optCtxDesc": {
+    "message": "Ouvrir les recherches du menu contextuel silencieusement en arrière-plan."
+  },
+  "optGoogleLabel": {
+    "message": "Intégration de la recherche Google"
+  },
+  "optGoogleDesc": {
+    "message": "Ajoute une icône Letterboxd à côté des liens IMDb dans les résultats de Google."
+  },
+  "optShowIconLbLabel": {
+    "message": "Afficher l'icône IMDb sur Letterboxd"
+  },
+  "optShowIconImdbLabel": {
+    "message": "Afficher l'icône Letterboxd sur IMDb"
+  },
+  "optGoogleNewTabLabel": {
+    "message": "Comportement du bouton Letterboxd sur Google"
+  },
+  "optGoogleNewTabDesc": {
+    "message": "Ouvrez la page Letterboxd dans un nouvel onglet lorsque vous cliquez sur Google."
+  },
+  "optSaveBtn": {
+    "message": "Enregistrer"
+  },
+  "optSaved": {
+    "message": "Paramètres enregistrés !"
+  },
+  "imdbVotesLabel": {
+    "message": "votes sur IMDb"
+  },
+  "popupImdbRatingLabel": {
+    "message": "Note IMDb (Letterboxd)"
+  },
+  "popupAllSettings": {
+    "message": "Tous les paramètres"
+  },
+  "popupImdbIconLabel": {
+    "message": "Icône Letterboxd sur IMDb"
+  },
+  "popupGoogleLabel": {
+    "message": "Intégration Google"
+  },
+  "openInLetterboxd": {
+    "message": "Ouvrir dans Letterboxd"
+  },
+  "openInImdb": {
+    "message": "Ouvrir dans IMDb"
+  },
+  "histogramTooltip": {
+    "message": "%1 étoiles : %2 notes (%3%)"
+  },
+  "saveHistoryLabel": {
+    "message": "Enregistrer l'historique des recherches"
+  },
+  "optHistoryDesc": {
+    "message": "Votre historique de recherche est enregistré localement sur ce navigateur et n'est jamais envoyé à aucun serveur."
+  },
+  "recentSearches": {
+    "message": "Recherches récentes"
+  },
+  "clearHistory": {
+    "message": "Effacer"
+  },
+  "optRateExtension": {
+    "message": "Évaluer sur Firefox Add-ons"
+  },
+  "netflixAlertHeading": {
+    "message": "Film Actif sur Netflix"
+  },
+  "netflixRedirectBtnText": {
+    "message": "Rediriger vers Letterboxd"
+  },
+  "maxAlertHeading": {
+    "message": "Film Actif sur HBO Max"
+  },
+  "maxRedirectBtnText": {
+    "message": "Rediriger vers Letterboxd"
+  },
+  "primeAlertHeading": {
+    "message": "Film Actif sur Prime Video"
+  },
+  "primeRedirectBtnText": {
+    "message": "Rediriger vers Letterboxd"
+  },
+  "mubiAlertHeading": {
+    "message": "Film Actif sur MUBI"
+  },
+  "mubiRedirectBtnText": {
+    "message": "Rediriger vers Letterboxd"
+  },
+  "disneyAlertHeading": {
+    "message": "Film Actif sur Disney+"
+  },
+  "disneyRedirectBtnText": {
+    "message": "Rediriger vers Letterboxd"
+  },
+  "appleAlertHeading": {
+    "message": "Film Actif sur Apple TV+"
+  },
+  "appleRedirectBtnText": {
+    "message": "Rediriger vers Letterboxd"
+  },
+  "imdbAlertHeading": {
+    "message": "Film Actif sur IMDb"
+  },
+  "imdbAlertHeadingPerson": {
+    "message": "Personne Active sur IMDb"
+  },
+  "imdbRedirectBtnText": {
+    "message": "Rediriger vers Letterboxd"
+  },
+  "welcomeTitle": {
+    "message": "Bienvenue sur Letterboxd Search & Click !"
+  },
+  "welcomeSubtitle": {
+    "message": "Accédez au monde du cinéma en un clic."
+  },
+  "pinTitle": {
+    "message": "Pourquoi épingler l'extension ?"
+  },
+  "pinAdvantage1": {
+    "message": "🚀 Recherche en 1 clic : Recherchez rapidement des films depuis n'importe quel onglet."
+  },
+  "pinAdvantage2": {
+    "message": "🍿 Redirection automatique : Accédez directement à Letterboxd depuis les pages de contenu sur Netflix, Prime, etc."
+  },
+  "pinAdvantage3": {
+    "message": "▶️ Badge intelligent : Affichez un indicateur lorsqu'un film est détecté sur une plateforme prise en charge."
+  },
+  "pinInstructionTitle": {
+    "message": "Comment épingler"
+  },
+  "pinInstructionChrome": {
+    "message": "Cliquez sur l'icône <b>Puzzle (Extensions)</b>, puis cliquez sur l'icône <b>Épingler</b> à côté de Letterboxd Search."
+  },
+  "pinInstructionFirefox": {
+    "message": "Cliquez sur l'icône <b>Extensions</b>, faites un clic droit sur Letterboxd Search et sélectionnez <b>'Épingler à la barre d'outils'</b>."
+  },
+  "pinClose": {
+    "message": "Fermer et commencer l'exploration"
+  }
+}

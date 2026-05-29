@@ -1,0 +1,92 @@
+{
+  "extensionName": {
+    "message": "Notes IMDb et recherche pour Letterboxd"
+  },
+  "extensionDescription": {
+    "message": "Recherchez sur Letterboxd depuis n'importe quelle page et consultez les notes IMDb directement sur les pages de films Letterboxd."
+  },
+  "searchOnLetterboxd": {
+    "message": "Rechercher \"%s\" sur Letterboxd"
+  },
+  "popupTitle": {
+    "message": "Recherche Letterboxd"
+  },
+  "popupPlaceholder": {
+    "message": "Entrez un nom de film..."
+  },
+  "popupSearchBtn": {
+    "message": "Rechercher"
+  },
+  "optTitle": {
+    "message": "Paramètres de Recherche Letterboxd"
+  },
+  "optHeading": {
+    "message": "Paramètres de l'extension"
+  },
+  "optImdbLabel": {
+    "message": "Comportement du bouton IMDb"
+  },
+  "optImdbDesc": {
+    "message": "Ouvrir la page IMDb dans un nouvel onglet lorsque vous cliquez sur l'icône IMDb sur Letterboxd."
+  },
+  "optLbLabel": {
+    "message": "Comportement du bouton Letterboxd"
+  },
+  "optLbDesc": {
+    "message": "Ouvrir la page Letterboxd dans un nouvel onglet lorsque vous cliquez sur l'icône Letterboxd sur IMDb."
+  },
+  "optCtxLabel": {
+    "message": "Comportement du menu contextuel"
+  },
+  "optCtxDesc": {
+    "message": "Ouvrir les recherches du menu contextuel silencieusement en arrière-plan."
+  },
+  "optGoogleLabel": {
+    "message": "Intégration de la recherche Google"
+  },
+  "optGoogleDesc": {
+    "message": "Ajoute une icône Letterboxd à côté des liens IMDb dans les résultats de Google."
+  },
+  "optShowIconLbLabel": {
+    "message": "Afficher l'icône IMDb sur la page Letterboxd"
+  },
+  "optShowIconImdbLabel": {
+    "message": "Afficher l'icône Letterboxd sur la page IMDb"
+  },
+  "optGoogleNewTabLabel": {
+    "message": "Comportement du bouton Letterboxd sur Google"
+  },
+  "optGoogleNewTabDesc": {
+    "message": "Ouvrez la page Letterboxd dans un nouvel onglet lorsque vous cliquez sur l'icône sur Google."
+  },
+  "optSaveBtn": {
+    "message": "Enregistrer les paramètres"
+  },
+  "optSaved": {
+    "message": "Paramètres enregistrés !"
+  },
+  "imdbVotesLabel": {
+    "message": "votes sur IMDb"
+  },
+  "popupImdbRatingLabel": {
+    "message": "Note IMDb (Letterboxd)"
+  },
+  "popupAllSettings": {
+    "message": "Tous les paramètres"
+  },
+  "popupImdbIconLabel": {
+    "message": "Icône Letterboxd sur IMDb"
+  },
+  "popupGoogleLabel": {
+    "message": "Intégration Google"
+  },
+  "openInLetterboxd": {
+    "message": "Ouvrir dans Letterboxd"
+  },
+  "openInImdb": {
+    "message": "Ouvrir dans IMDb"
+  },
+  "histogramTooltip": {
+    "message": "%1 étoiles : %2 notes (%3%)"
+  }
+}

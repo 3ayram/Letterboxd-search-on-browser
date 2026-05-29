@@ -1,12 +1,12 @@
 {
   "extensionName": {
-    "message": "letterboxd Search"
+    "message": "Letterboxd Helper"
   },
   "extensionDescription": {
-    "message": "Search selected text on letterboxd"
+    "message": "Integrate Letterboxd and IMDb seamlessly. View IMDb ratings on Letterboxd, add quick links to Google search results."
   },
   "searchOnLetterboxd": {
-    "message": "Search letterboxd for \"%s\""
+    "message": "Search letterboxd for '%s'"
   },
   "popupTitle": {
     "message": "Letterboxd Search"
@@ -47,10 +47,145 @@
   "optGoogleDesc": {
     "message": "Add a Letterboxd icon next to IMDb links in Google search results."
   },
+  "optShowIconLbLabel": {
+    "message": "Show IMDb Icon on Letterboxd Page"
+  },
+  "optShowIconImdbLabel": {
+    "message": "Show Letterboxd Icon on IMDb Page"
+  },
+  "optGoogleNewTabLabel": {
+    "message": "Letterboxd Button Behavior on Google"
+  },
+  "optGoogleNewTabDesc": {
+    "message": "Open the Letterboxd page in a new tab when you click the icon on Google."
+  },
   "optSaveBtn": {
     "message": "Save Settings"
   },
   "optSaved": {
     "message": "Settings saved!"
+  },
+  "imdbVotesLabel": {
+    "message": "votes on IMDb"
+  },
+  "popupImdbRatingLabel": {
+    "message": "IMDb Rating (Letterboxd)"
+  },
+  "popupAllSettings": {
+    "message": "All Settings"
+  },
+  "popupImdbIconLabel": {
+    "message": "Letterboxd Icon on IMDb"
+  },
+  "popupGoogleLabel": {
+    "message": "Google Integration"
+  },
+  "openInLetterboxd": {
+    "message": "Open in Letterboxd"
+  },
+  "openInImdb": {
+    "message": "Open in IMDb"
+  },
+  "histogramTooltip": {
+    "message": "%1 stars: %2 ratings (%3%)"
+  },
+  "saveHistoryLabel": {
+    "message": "Save Search History"
+  },
+  "optHistoryDesc": {
+    "message": "Your search history is saved locally on this browser and never sent to any servers."
+  },
+  "recentSearches": {
+    "message": "Recent Searches"
+  },
+  "clearHistory": {
+    "message": "Clear"
+  },
+  "optRateExtension": {
+    "message": "Rate on Firefox Add-ons"
+  },
+  "netflixAlertHeading": {
+    "message": "Active Movie on Netflix"
+  },
+  "netflixRedirectBtnText": {
+    "message": "Redirect to Letterboxd"
+  },
+  "maxAlertHeading": {
+    "message": "Active Movie on HBO Max"
+  },
+  "maxRedirectBtnText": {
+    "message": "Redirect to Letterboxd"
+  },
+  "primeAlertHeading": {
+    "message": "Active Movie on Prime Video"
+  },
+  "primeRedirectBtnText": {
+    "message": "Redirect to Letterboxd"
+  },
+  "mubiAlertHeading": {
+    "message": "Active Movie on MUBI"
+  },
+  "mubiRedirectBtnText": {
+    "message": "Redirect to Letterboxd"
+  },
+  "disneyAlertHeading": {
+    "message": "Active Movie on Disney+"
+  },
+  "disneyRedirectBtnText": {
+    "message": "Redirect to Letterboxd"
+  },
+  "appleAlertHeading": {
+    "message": "Active Movie on Apple TV+"
+  },
+  "appleRedirectBtnText": {
+    "message": "Redirect to Letterboxd"
+  },
+  "imdbAlertHeading": {
+    "message": "Active Movie on IMDb"
+  },
+  "imdbAlertHeadingPerson": {
+    "message": "Active Person on IMDb"
+  },
+  "imdbRedirectBtnText": {
+    "message": "Redirect to Letterboxd"
+  },
+  "optAutoRedirectLabel": {
+    "message": "Auto-Redirect (Streaming & IMDb)"
+  },
+  "optAutoRedirectDesc": {
+    "message": "When on Netflix, Max, Prime, MUBI, Disney, Apple or IMDb pages, clicking the toolbar icon redirects directly to Letterboxd without showing the popup."
+  },
+  "labelAutoRedirect": {
+    "message": "Auto-Redirect (Streaming/IMDb)"
+  },
+  "welcomeTitle": {
+    "message": "Welcome to Letterboxd Search & Click!"
+  },
+  "welcomeSubtitle": {
+    "message": "Access the world of cinema with one click."
+  },
+  "pinTitle": {
+    "message": "Why Pin the Extension?"
+  },
+  "pinAdvantage1": {
+    "message": "🚀 1-Click Search: Quickly search movies from any tab."
+  },
+  "pinAdvantage2": {
+    "message": "🍿 Auto-Redirect: Jump directly to Letterboxd from content pages on Netflix, Prime, Max, IMDb, etc."
+  },
+  "pinAdvantage3": {
+    "message": "▶️ Smart Badge: See a badge indicator when a movie is detected on a supported platform."
+  },
+  "pinInstructionTitle": {
+    "message": "How to Pin"
+  },
+  "pinInstructionChrome": {
+    "message": "Click the <b>Puzzle (Extensions)</b> icon on the toolbar and click the <b>Pin</b> icon next to Letterboxd Search."
+  },
+  "pinInstructionFirefox": {
+    "message": "Click the <b>Extensions (Puzzle)</b> icon on the toolbar, right-click Letterboxd Search and select <b>'Pin to Toolbar'</b>."
+  },
+  "pinClose": {
+    "message": "Close & Start Exploring"
   }
 }

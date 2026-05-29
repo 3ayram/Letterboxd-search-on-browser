@@ -1,0 +1,25 @@
+#letterboxd-imdb-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 12px;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.8;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+#letterboxd-imdb-icon:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+#letterboxd-imdb-icon img {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}

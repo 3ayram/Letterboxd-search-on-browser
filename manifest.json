@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "__MSG_extensionName__",
-  "version": "1.4.1",
+  "version": "1.5.8",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "developer": {
@@ -13,6 +13,7 @@
     "16": "icon16.png",
     "32": "icon32.png",
     "48": "icon48.png",
+    "64": "icon64.png",
     "128": "icon128.png"
   },
   "background": {
@@ -21,8 +22,19 @@
     ]
   },
   "permissions": [
-    "contextMenus",
-    "storage"
+    "menus",
+    "storage",
+    "activeTab",
+    "tabs",
+    "*://*.imdb.com/*",
+    "*://www.omdbapi.com/*",
+    "*://*.netflix.com/*",
+    "*://play.hbomax.com/*",
+    "*://*.max.com/*",
+    "*://*.primevideo.com/*",
+    "*://*.mubi.com/*",
+    "*://*.disneyplus.com/*",
+    "*://tv.apple.com/*"
   ],
   "options_ui": {
     "page": "options.html",
@@ -37,14 +49,28 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*.imdb.com/title/*"],
-      "css": ["imdb.css"],
-      "js": ["imdb.js"]
+      "matches": [
+        "https://letterboxd.com/film/*",
+        "https://www.letterboxd.com/film/*"
+      ],
+      "css": [
+        "letterboxd.css"
+      ],
+      "js": [
+        "letterboxd.js"
+      ]
     },
     {
-      "matches": ["*://letterboxd.com/film/*", "*://www.letterboxd.com/film/*"],
-      "css": ["letterboxd.css"],
-      "js": ["letterboxd.js"]
+      "matches": [
+        "*://*.imdb.com/title/*",
+        "*://*.imdb.com/name/*"
+      ],
+      "css": [
+        "imdb.css"
+      ],
+      "js": [
+        "imdb.js"
+      ]
     },
     {
       "matches": [
@@ -56,19 +82,71 @@
         "*://*.google.fr/search*",
         "*://*.google.it/search*"
       ],
-      "js": ["google.js"]
+      "js": [
+        "google.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.netflix.com/*"
+      ],
+      "js": [
+        "netflix.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://play.hbomax.com/*",
+        "*://*.max.com/*"
+      ],
+      "js": [
+        "hbomax.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.primevideo.com/*"
+      ],
+      "js": [
+        "primevideo.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.mubi.com/*"
+      ],
+      "js": [
+        "mubi.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.disneyplus.com/*"
+      ],
+      "js": [
+        "disneyplus.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://tv.apple.com/*"
+      ],
+      "js": [
+        "apple.js"
+      ]
     }
   ],
   "web_accessible_resources": [
     "icon16.png",
-    "icon32.png",
-    "icons8-imdb-48.png"
+    "icon32.png"
   ],
   "browser_specific_settings": {
     "gecko": {
       "id": "{d7b0fd82-5f3c-4b3b-8858-f19b8646cfe2}",
       "data_collection_permissions": {
-        "required": ["none"]
+        "required": [
+          "none"
+        ]
       }
     }
   }

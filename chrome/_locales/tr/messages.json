@@ -1,12 +1,12 @@
 {
   "extensionName": {
-    "message": "Letterboxd Arama"
+    "message": "Letterboxd Yardımcısı"
   },
   "extensionDescription": {
-    "message": "Seçilen metni Letterboxd arayın"
+    "message": "Letterboxd ve IMDb'yi kusursuzca entegre edin. Letterboxd'da IMDb puanlarını görün, Google aramalarına hızlı bağlantılar ekleyin."
   },
   "searchOnLetterboxd": {
-    "message": "\"%s\" metni Letterboxd ile ara"
+    "message": "'%s' metni Letterboxd ile ara"
   },
   "popupTitle": {
     "message": "Letterboxd Arama"
@@ -47,10 +47,145 @@
   "optGoogleDesc": {
     "message": "Google arama sonuçlarında görünen IMDb linklerinin yanına Letterboxd ikonu ekler."
   },
+  "optShowIconLbLabel": {
+    "message": "Letterboxd Sayfasında IMDb İkonunu Göster"
+  },
+  "optShowIconImdbLabel": {
+    "message": "IMDb Sayfasında Letterboxd İkonunu Göster"
+  },
+  "optGoogleNewTabLabel": {
+    "message": "Google'da Letterboxd Butonu Davranışı"
+  },
+  "optGoogleNewTabDesc": {
+    "message": "Google'daki Letterboxd ikonuna tıkladığınızda sayfayı her zaman yeni sekmede açar."
+  },
   "optSaveBtn": {
     "message": "Ayarları Kaydet"
   },
   "optSaved": {
     "message": "Ayarlar kaydedildi!"
+  },
+  "imdbVotesLabel": {
+    "message": "IMDb oylaması"
+  },
+  "popupImdbRatingLabel": {
+    "message": "IMDb Puanı (Letterboxd)"
+  },
+  "popupAllSettings": {
+    "message": "Tüm Ayarlar"
+  },
+  "popupImdbIconLabel": {
+    "message": "IMDb'de Letterboxd İkonu"
+  },
+  "popupGoogleLabel": {
+    "message": "Google Entegrasyonu"
+  },
+  "openInLetterboxd": {
+    "message": "Letterboxd'da Aç"
+  },
+  "openInImdb": {
+    "message": "IMDb'de Aç"
+  },
+  "histogramTooltip": {
+    "message": "%1 yıldız: %2 oy (%3%)"
+  },
+  "saveHistoryLabel": {
+    "message": "Arama Geçmişini Kaydet"
+  },
+  "optHistoryDesc": {
+    "message": "Arama geçmişiniz yalnızca bu tarayıcıda yerel olarak saklanır, hiçbir sunucuya gönderilmez."
+  },
+  "recentSearches": {
+    "message": "Son Aramalar"
+  },
+  "clearHistory": {
+    "message": "Temizle"
+  },
+  "optRateExtension": {
+    "message": "Firefox Eklentileri'nde Oyla"
+  },
+  "netflixAlertHeading": {
+    "message": "Netflix'te Açık Film"
+  },
+  "netflixRedirectBtnText": {
+    "message": "Letterboxd'a Yönlendir"
+  },
+  "maxAlertHeading": {
+    "message": "HBO Max'te Açık Film"
+  },
+  "maxRedirectBtnText": {
+    "message": "Letterboxd'a Yönlendir"
+  },
+  "primeAlertHeading": {
+    "message": "Prime Video'da Açık Film"
+  },
+  "primeRedirectBtnText": {
+    "message": "Letterboxd'a Yönlendir"
+  },
+  "mubiAlertHeading": {
+    "message": "MUBI'de Açık Film"
+  },
+  "mubiRedirectBtnText": {
+    "message": "Letterboxd'a Yönlendir"
+  },
+  "disneyAlertHeading": {
+    "message": "Disney+'ta Açık Film"
+  },
+  "disneyRedirectBtnText": {
+    "message": "Letterboxd'a Yönlendir"
+  },
+  "appleAlertHeading": {
+    "message": "Apple TV+'ta Açık Film"
+  },
+  "appleRedirectBtnText": {
+    "message": "Letterboxd'a Yönlendir"
+  },
+  "imdbAlertHeading": {
+    "message": "IMDb'de Açık Film"
+  },
+  "imdbAlertHeadingPerson": {
+    "message": "IMDb'de Açık Sanatçı"
+  },
+  "imdbRedirectBtnText": {
+    "message": "Letterboxd'a Yönlendir"
+  },
+  "optAutoRedirectLabel": {
+    "message": "Otomatik Yönlendirme (Streaming & IMDb)"
+  },
+  "optAutoRedirectDesc": {
+    "message": "Netflix, Max, Prime Video, MUBI, Disney+, Apple TV+ ve IMDb sayfalarındayken toolbar ikonuna tıkladığınızda popup penceresi açılmadan direkt Letterboxd sayfasına yönlendirir."
+  },
+  "labelAutoRedirect": {
+    "message": "Direkt Yönlendir (Streaming/IMDb)"
+  },
+  "welcomeTitle": {
+    "message": "Letterboxd Search & Click'e Hoş Geldiniz!"
+  },
+  "welcomeSubtitle": {
+    "message": "Sinema dünyasına tek tıkla ulaşın."
+  },
+  "pinTitle": {
+    "message": "Neden Sabitlemelisiniz? (Pin)"
+  },
+  "pinAdvantage1": {
+    "message": "🚀 Tek Tıkla Arama: Her sekmeden hızlıca film arama imkanı."
+  },
+  "pinAdvantage2": {
+    "message": "🍿 Otomatik Yönlendirme: Netflix, Prime, Max, IMDb gibi platformlarda film sayfasındayken tek tıkla doğrudan Letterboxd'a gitme."
+  },
+  "pinAdvantage3": {
+    "message": "▶️ Akıllı Rozet: Desteklenen bir platformda film açıkken ikon üzerinde beliren uyarı rozeti ile anında durum tespiti."
+  },
+  "pinInstructionTitle": {
+    "message": "Nasıl Sabitlenir?"
+  },
+  "pinInstructionChrome": {
+    "message": "Araç çubuğundaki <b>Yapboz (Eklentiler)</b> ikonuna tıklayın ve Letterboxd Search'ün yanındaki <b>İğne (Pin)</b> simgesine basın."
+  },
+  "pinInstructionFirefox": {
+    "message": "Araç çubuğundaki <b>Eklentiler (Yapboz)</b> ikonuna tıklayın, Letterboxd Search'e sağ tıklayıp <b>'Araç Çubuğuna Sabitle'</b> seçeneğini seçin."
+  },
+  "pinClose": {
+    "message": "Kapat ve Keşfetmeye Başla"
   }
 }

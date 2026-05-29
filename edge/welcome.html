@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title data-i18n="welcomeTitle">Letterboxd Search & Click'e Hoş Geldiniz!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+  <div class="welcome-container">
+    <div class="logo-container">
+      <img src="icon128.png" alt="Letterboxd Search Logo" class="logo">
+    </div>
+    
+    <h1 data-i18n="welcomeTitle">Letterboxd Search & Click</h1>
+    <p class="subtitle" data-i18n="welcomeSubtitle">Sinema dünyasına tek tıkla ulaşın.</p>
+    
+    <div class="features-card">
+      <h2 data-i18n="pinTitle">Neden Sabitlemelisiniz? (Pin)</h2>
+      <ul class="features-list">
+        <li data-i18n="pinAdvantage1">🚀 Tek Tıkla Arama: Her sekmeden hızlıca film arama imkanı.</li>
+        <li data-i18n="pinAdvantage2">🍿 Otomatik Yönlendirme: Netflix, Prime, Max, IMDb gibi platformlarda içerik sayfasındayken tek tıkla doğrudan Letterboxd'a gitme.</li>
+        <li data-i18n="pinAdvantage3">▶ Akıllı Rozet: Desteklenen bir platformda film açıkken ikon üzerinde beliren uyarı rozeti ile anında durum tespiti.</li>
+      </ul>
+    </div>
+    
+    <div class="instruction-card">
+      <h2 data-i18n="pinInstructionTitle">Nasıl Sabitlenir?</h2>
+      
+      <!-- Container for dynamic instruction based on browser -->
+      <div id="pinInstruction" class="instruction-text">
+        <!-- Will be filled by JS -->
+      </div>
+      
+      <div class="animation-placeholder">
+        <!-- A simple CSS animation showing the pin process -->
+        <div class="puzzle-icon">🧩</div>
+        <div class="arrow">→</div>
+        <div class="pin-icon">📌</div>
+      </div>
+    </div>
+    
+    <button id="closeBtn" class="close-btn" data-i18n="pinClose">Kapat ve Keşfetmeye Başla</button>
+  </div>
+  
+  <script src="welcome.js"></script>
+</body>
+</html>

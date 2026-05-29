@@ -1,0 +1,92 @@
+{
+  "extensionName": {
+    "message": "IMDb-Bewertungen und Suche für Letterboxd"
+  },
+  "extensionDescription": {
+    "message": "Suchen Sie Letterboxd von jeder Seite aus und sehen Sie IMDb-Bewertungen direkt auf Letterboxd-Filmseiten."
+  },
+  "searchOnLetterboxd": {
+    "message": "Suche nach \"%s\" auf Letterboxd"
+  },
+  "popupTitle": {
+    "message": "Letterboxd Suche"
+  },
+  "popupPlaceholder": {
+    "message": "Geben Sie einen Filmnamen ein..."
+  },
+  "popupSearchBtn": {
+    "message": "Suchen"
+  },
+  "optTitle": {
+    "message": "Letterboxd Suche Einstellungen"
+  },
+  "optHeading": {
+    "message": "Erweiterungseinstellungen"
+  },
+  "optImdbLabel": {
+    "message": "IMDb-Schaltfläche Verhalten"
+  },
+  "optImdbDesc": {
+    "message": "IMDb-Seite in einem neuen Tab öffnen, wenn Sie auf Letterboxd auf das IMDb-Symbol klicken."
+  },
+  "optLbLabel": {
+    "message": "Letterboxd-Schaltfläche Verhalten"
+  },
+  "optLbDesc": {
+    "message": "Letterboxd-Seite in einem neuen Tab öffnen, wenn Sie auf IMDb auf das Letterboxd-Symbol klicken."
+  },
+  "optCtxLabel": {
+    "message": "Kontextmenü Verhalten"
+  },
+  "optCtxDesc": {
+    "message": "Kontextmenü-Suchen stumm im Hintergrund öffnen."
+  },
+  "optGoogleLabel": {
+    "message": "Google-Suche Integration"
+  },
+  "optGoogleDesc": {
+    "message": "Fügt ein Letterboxd-Symbol neben IMDb-Links in den Google-Suchergebnissen hinzu."
+  },
+  "optShowIconLbLabel": {
+    "message": "IMDb-Symbol auf der Letterboxd-Seite anzeigen"
+  },
+  "optShowIconImdbLabel": {
+    "message": "Letterboxd-Symbol auf der IMDb-Seite anzeigen"
+  },
+  "optGoogleNewTabLabel": {
+    "message": "Letterboxd-Schaltflächenverhalten bei Google"
+  },
+  "optGoogleNewTabDesc": {
+    "message": "Öffnen Sie die Letterboxd-Seite in einem neuen Tab, wenn Sie auf das Symbol bei Google klicken."
+  },
+  "optSaveBtn": {
+    "message": "Einstellungen speichern"
+  },
+  "optSaved": {
+    "message": "Einstellungen gespeichert!"
+  },
+  "imdbVotesLabel": {
+    "message": "Stimmen auf IMDb"
+  },
+  "popupImdbRatingLabel": {
+    "message": "IMDb-Bewertung (Letterboxd)"
+  },
+  "popupAllSettings": {
+    "message": "Alle Einstellungen"
+  },
+  "popupImdbIconLabel": {
+    "message": "Letterboxd-Symbol auf IMDb"
+  },
+  "popupGoogleLabel": {
+    "message": "Google-Integration"
+  },
+  "openInLetterboxd": {
+    "message": "In Letterboxd öffnen"
+  },
+  "openInImdb": {
+    "message": "In IMDb öffnen"
+  },
+  "histogramTooltip": {
+    "message": "%1 Sterne: %2 Bewertungen (%3%)"
+  }
+}

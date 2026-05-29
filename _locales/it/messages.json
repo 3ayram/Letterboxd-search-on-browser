@@ -1,18 +1,18 @@
 {
   "extensionName": {
-    "message": "Ricerca Letterboxd"
+    "message": "Assistente Letterboxd"
   },
   "extensionDescription": {
-    "message": "Cerca il testo selezionato su Letterboxd"
+    "message": "Integra Letterboxd e IMDb alla perfezione. Visualizza le valutazioni di IMDb su Letterboxd."
   },
   "searchOnLetterboxd": {
-    "message": "Cerca \"%s\" su Letterboxd"
+    "message": "Cerca in letterboxd per '%s'"
   },
   "popupTitle": {
     "message": "Ricerca Letterboxd"
   },
   "popupPlaceholder": {
-    "message": "Inserisci il nome di un film..."
+    "message": "Digita il nome di un film..."
   },
   "popupSearchBtn": {
     "message": "Cerca"
@@ -47,10 +47,136 @@
   "optGoogleDesc": {
     "message": "Aggiunge un'icona Letterboxd accanto ai link IMDb nei risultati di ricerca di Google."
   },
+  "optShowIconLbLabel": {
+    "message": "Mostra icona IMDb su Letterboxd"
+  },
+  "optShowIconImdbLabel": {
+    "message": "Mostra l'icona di Letterboxd su IMDb"
+  },
+  "optGoogleNewTabLabel": {
+    "message": "Comportamento pulsante Letterboxd su Google"
+  },
+  "optGoogleNewTabDesc": {
+    "message": "Apri la pagina Letterboxd in una nuova scheda quando fai clic sull'icona su Google."
+  },
   "optSaveBtn": {
     "message": "Salva Impostazioni"
   },
   "optSaved": {
     "message": "Impostazioni salvate!"
+  },
+  "imdbVotesLabel": {
+    "message": "voti su IMDb"
+  },
+  "popupImdbRatingLabel": {
+    "message": "Valutazione IMDb (Letterboxd)"
+  },
+  "popupAllSettings": {
+    "message": "Tutte le impostazioni"
+  },
+  "popupImdbIconLabel": {
+    "message": "Icona Letterboxd su IMDb"
+  },
+  "popupGoogleLabel": {
+    "message": "Integrazione Google"
+  },
+  "openInLetterboxd": {
+    "message": "Apri in Letterboxd"
+  },
+  "openInImdb": {
+    "message": "Apri in IMDb"
+  },
+  "histogramTooltip": {
+    "message": "%1 stelle: %2 voti (%3%)"
+  },
+  "saveHistoryLabel": {
+    "message": "Salva cronologia ricerche"
+  },
+  "optHistoryDesc": {
+    "message": "La cronologia delle ricerche viene salvata localmente su questo browser e non viene mai inviata ad alcun server."
+  },
+  "recentSearches": {
+    "message": "Ricerche recenti"
+  },
+  "clearHistory": {
+    "message": "Cancella"
+  },
+  "optRateExtension": {
+    "message": "Valuta su Firefox Add-ons"
+  },
+  "netflixAlertHeading": {
+    "message": "Film Attivo su Netflix"
+  },
+  "netflixRedirectBtnText": {
+    "message": "Reindirizza a Letterboxd"
+  },
+  "maxAlertHeading": {
+    "message": "Film Attivo su HBO Max"
+  },
+  "maxRedirectBtnText": {
+    "message": "Reindirizza a Letterboxd"
+  },
+  "primeAlertHeading": {
+    "message": "Film Attivo su Prime Video"
+  },
+  "primeRedirectBtnText": {
+    "message": "Reindirizza a Letterboxd"
+  },
+  "mubiAlertHeading": {
+    "message": "Film Attivo su MUBI"
+  },
+  "mubiRedirectBtnText": {
+    "message": "Reindirizza a Letterboxd"
+  },
+  "disneyAlertHeading": {
+    "message": "Film Attivo su Disney+"
+  },
+  "disneyRedirectBtnText": {
+    "message": "Reindirizza a Letterboxd"
+  },
+  "appleAlertHeading": {
+    "message": "Film Attivo su Apple TV+"
+  },
+  "appleRedirectBtnText": {
+    "message": "Reindirizza a Letterboxd"
+  },
+  "imdbAlertHeading": {
+    "message": "Film Attivo su IMDb"
+  },
+  "imdbAlertHeadingPerson": {
+    "message": "Persona Attiva su IMDb"
+  },
+  "imdbRedirectBtnText": {
+    "message": "Reindirizza a Letterboxd"
+  },
+  "welcomeTitle": {
+    "message": "Benvenuto in Letterboxd Search & Click!"
+  },
+  "welcomeSubtitle": {
+    "message": "Accedi al mondo del cinema con un clic."
+  },
+  "pinTitle": {
+    "message": "Perché fissare l'estensione?"
+  },
+  "pinAdvantage1": {
+    "message": "🚀 Ricerca in 1 clic: Cerca rapidamente film da qualsiasi scheda."
+  },
+  "pinAdvantage2": {
+    "message": "🍿 Reindirizzamento automatico: Passa direttamente a Letterboxd dalle pagine di contenuto su Netflix, Prime, ecc."
+  },
+  "pinAdvantage3": {
+    "message": "▶️ Badge intelligente: Visualizza un indicatore quando un film viene rilevato su una piattaforma supportata."
+  },
+  "pinInstructionTitle": {
+    "message": "Come fissare"
+  },
+  "pinInstructionChrome": {
+    "message": "Fai clic sull'icona del <b>Puzzle (Estensioni)</b> e fai clic sull'icona <b>Fissa</b> accanto a Letterboxd Search."
+  },
+  "pinInstructionFirefox": {
+    "message": "Fai clic sull'icona <b>Estensioni</b>, fai clic con il pulsante destro del mouse su Letterboxd Search e seleziona <b>'Fissa alla barra degli strumenti'</b>."
+  },
+  "pinClose": {
+    "message": "Chiudi e inizia a esplorare"
   }
 }

@@ -1,92 +1,562 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-color: #14181c;
+      --card-bg: #1c2228;
+      --card-border: #2c3640;
+      --text-main: #ffffff;
+      --text-muted: #899aa9;
+      --lb-green: #00e054;
+      --lb-green-hover: #00c04b;
+      --lb-blue: #40bcf4;
+      --lb-orange: #ff8000;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      width: 100%;
-      min-width: 250px;
-      padding: 15px;
-      box-sizing: border-box;
-      font-family: sans-serif;
+      width: 320px;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
       margin: 0;
-      background-color: #14181c;
-      /* Letterboxd dark background */
-      color: #99aabb;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+    
+    .container {
+      padding: 20px;
+      position: relative;
+    }
+
+    /* Letterboxd style top accent */
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--lb-green) 0%, var(--lb-blue) 50%, var(--lb-orange) 100%);
     }
 
     .header-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
     }
 
     h3 {
       margin: 0;
-      color: #fff;
+      color: var(--text-main);
       font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
     }
 
     #settingsBtn {
       background: none;
       border: none;
-      color: #99aabb;
-      font-size: 18px;
+      color: var(--text-muted);
       cursor: pointer;
-      padding: 0;
-      width: auto;
+      padding: 4px;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      transition: all 0.2s ease;
     }
 
-    #settingsBtn:hover {
-      color: #fff;
+    #settingsBtn:hover { 
+      color: var(--text-main); 
+      background: var(--card-bg);
     }
 
-    input {
+    /* Ana ekran */
+    #mainView input {
       width: 100%;
-      padding: 8px;
-      box-sizing: border-box;
-      border: 1px solid #445566;
-      border-radius: 3px;
-      background: #2c3440;
+      padding: 12px 14px;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      background: #181d23;
       color: #fff;
       font-size: 14px;
-      margin-bottom: 10px;
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 12px;
+      transition: all 0.2s ease;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    input:focus {
+    #mainView input:focus {
       outline: none;
-      border-color: #00e054;
-      /* Letterboxd green */
+      border-color: var(--lb-blue);
+      box-shadow: 0 0 0 2px rgba(64, 188, 244, 0.2);
     }
 
-    button {
+    #searchBtn {
       width: 100%;
-      padding: 8px;
-      background-color: #00e054;
+      padding: 12px;
+      background-color: var(--lb-green);
       color: #fff;
       border: none;
-      border-radius: 3px;
+      border-radius: 8px;
       cursor: pointer;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0, 224, 84, 0.2);
     }
 
-    button:hover {
-      background-color: #00c04b;
+    #searchBtn:hover { 
+      background-color: var(--lb-green-hover); 
+      transform: translateY(-1px);
+    }
+
+    #searchBtn:active {
+      transform: translateY(1px);
+    }
+
+    /* Ayarlar paneli */
+    #settingsView {
+      display: none;
+      animation: fadeIn 0.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .settings-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+    }
+
+    #backBtn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    #backBtn:hover { 
+      color: var(--text-main);
+      background: var(--card-bg);
+    }
+
+    .settings-title {
+      color: var(--text-main);
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .setting-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(44, 54, 64, 0.5);
+    }
+
+    .setting-row:last-of-type {
+      border-bottom: none;
+    }
+
+    .setting-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: #ccd5de;
+    }
+
+    /* Modern Toggle Switch */
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 36px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #3b4652;
+      transition: .3s cubic-bezier(0.4, 0.0, 0.2, 1);
+      border-radius: 20px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .3s cubic-bezier(0.4, 0.0, 0.2, 1);
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    input:checked + .slider {
+      background-color: var(--lb-green);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(16px);
+    }
+
+    /* Tam ayarlar linki */
+    #fullSettingsLink {
+      display: block;
+      margin-top: 16px;
+      padding-top: 16px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.2s;
+      border-top: 1px solid var(--card-border);
+    }
+
+    #fullSettingsLink:hover { color: var(--text-main); }
+      .history-tag {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 4px 10px;
+      border-radius: 14px;
+      font-size: 12px;
+      color: #ccd5de;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 140px;
+    }
+    .history-tag:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    /* Netflix Alert Styling */
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(229, 9, 20, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
+    }
+    @keyframes pulseMax {
+      0% { box-shadow: 0 0 0 0 rgba(0, 43, 231, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(0, 43, 231, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 43, 231, 0); }
+    }
+    @keyframes pulsePrime {
+      0% { box-shadow: 0 0 0 0 rgba(0, 168, 225, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(0, 168, 225, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 168, 225, 0); }
+    }
+    @keyframes pulseMubi {
+      0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+      70% { box-shadow: 0 0 0 8px rgba(255, 255, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+    }
+    @keyframes pulseDisney {
+      0% { box-shadow: 0 0 0 0 rgba(0, 99, 229, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(0, 99, 229, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 99, 229, 0); }
+    }
+    @keyframes pulseApple {
+      0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3); }
+      70% { box-shadow: 0 0 0 8px rgba(255, 255, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+    }
+    @keyframes pulseImdb {
+      0% { box-shadow: 0 0 0 0 rgba(245, 197, 24, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(245, 197, 24, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(245, 197, 24, 0); }
+    }
+    #netflixRedirectBtn:hover, #maxRedirectBtn:hover, #primeRedirectBtn:hover, #mubiRedirectBtn:hover, #disneyRedirectBtn:hover, #appleRedirectBtn:hover, #imdbRedirectBtn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(255, 128, 0, 0.45), 0 0 10px rgba(0, 224, 84, 0.3);
+    }
+    #netflixRedirectBtn:active, #maxRedirectBtn:active, #primeRedirectBtn:active, #mubiRedirectBtn:active, #disneyRedirectBtn:active, #appleRedirectBtn:active, #imdbRedirectBtn:active {
+      transform: translateY(1px);
     }
   </style>
 </head>
 
-<body>
-  <div class="header-container">
-    <h3 id="popupTitle">Letterboxd Arama</h3>
-    <button id="settingsBtn" title="Ayarlar">⚙️</button>
+<body style="opacity: 0; transition: opacity 0.1s ease;">
+  <div class="container">
+    <!-- Ana Arama Ekranı -->
+    <div id="mainView">
+      <div class="header-container" id="headerContainer">
+        <h3 id="popupTitle">Letterboxd Arama</h3>
+        <button id="settingsBtn" title="Ayarlar">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.06-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.73,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.06,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.43-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.49-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/></svg>
+        </button>
+      </div>
+
+      <!-- Netflix Film Tespit Edildi Uyarısı -->
+      <div id="netflixAlertContainer" style="display: none; margin-bottom: 16px; background: linear-gradient(135deg, rgba(229, 9, 20, 0.15) 0%, rgba(20, 24, 28, 0.95) 100%); border: 1px solid rgba(229, 9, 20, 0.3); border-radius: 12px; padding: 14px; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); animation: slideDown 0.3s ease-out;">
+        <div style="position: absolute; top: -20px; right: -20px; width: 60px; height: 60px; background: rgba(229, 9, 20, 0.25); filter: blur(20px); border-radius: 50%;"></div>
+        
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <!-- Number Alert Badge -->
+          <div style="width: 28px; height: 28px; background: #e50914; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 10px rgba(229, 9, 20, 0.6); animation: pulse 2s infinite;">
+            <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+          </div>
+          <div style="flex-grow: 1; overflow: hidden;">
+            <div id="netflixAlertHeading" style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: #ff333a; font-weight: 700; margin-bottom: 2px;">Netflix'te Açık Film</div>
+            <div id="netflixMovieTitle" style="font-size: 14px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;" title="">Film Adı</div>
+          </div>
+        </div>
+        
+        <!-- Redirect to Letterboxd Button -->
+        <button id="netflixRedirectBtn" style="width: 100%; padding: 10px; background: linear-gradient(90deg, #ff8000 0%, #00e054 100%); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 13px; font-family: 'Inter', sans-serif; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(255, 128, 0, 0.3);">
+          <span id="netflixRedirectBtnText">Letterboxd'a Yönlendir</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+        </button>
+      </div>
+
+      <!-- HBO Max / Max Film Tespit Edildi Uyarısı -->
+      <div id="maxAlertContainer" style="display: none; margin-bottom: 16px; background: linear-gradient(135deg, rgba(0, 43, 231, 0.15) 0%, rgba(20, 24, 28, 0.95) 100%); border: 1px solid rgba(0, 43, 231, 0.3); border-radius: 12px; padding: 14px; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); animation: slideDown 0.3s ease-out;">
+        <div style="position: absolute; top: -20px; right: -20px; width: 60px; height: 60px; background: rgba(0, 43, 231, 0.25); filter: blur(20px); border-radius: 50%;"></div>
+        
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <!-- Number Alert Badge -->
+          <div style="width: 28px; height: 28px; background: #002be7; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 10px rgba(0, 43, 231, 0.6); animation: pulseMax 2s infinite;">
+            <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+          </div>
+          <div style="flex-grow: 1; overflow: hidden;">
+            <div id="maxAlertHeading" style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: #3f65ff; font-weight: 700; margin-bottom: 2px;">HBO Max'te Açık Film</div>
+            <div id="maxMovieTitle" style="font-size: 14px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;" title="">Film Adı</div>
+          </div>
+        </div>
+        
+        <!-- Redirect to Letterboxd Button -->
+        <button id="maxRedirectBtn" style="width: 100%; padding: 10px; background: linear-gradient(90deg, #ff8000 0%, #00e054 100%); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 13px; font-family: 'Inter', sans-serif; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(255, 128, 0, 0.3);">
+          <span id="maxRedirectBtnText">Letterboxd'a Yönlendir</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+        </button>
+      </div>
+
+      <!-- Prime Video Film Tespit Edildi Uyarısı -->
+      <div id="primeAlertContainer" style="display: none; margin-bottom: 16px; background: linear-gradient(135deg, rgba(0, 168, 225, 0.15) 0%, rgba(20, 24, 28, 0.95) 100%); border: 1px solid rgba(0, 168, 225, 0.3); border-radius: 12px; padding: 14px; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); animation: slideDown 0.3s ease-out;">
+        <div style="position: absolute; top: -20px; right: -20px; width: 60px; height: 60px; background: rgba(0, 168, 225, 0.25); filter: blur(20px); border-radius: 50%;"></div>
+        
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <!-- Number Alert Badge -->
+          <div style="width: 28px; height: 28px; background: #00A8E1; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 10px rgba(0, 168, 225, 0.6); animation: pulsePrime 2s infinite;">
+            <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+          </div>
+          <div style="flex-grow: 1; overflow: hidden;">
+            <div id="primeAlertHeading" style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: #00A8E1; font-weight: 700; margin-bottom: 2px;">Prime Video'da Açık Film</div>
+            <div id="primeMovieTitle" style="font-size: 14px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;" title="">Film Adı</div>
+          </div>
+        </div>
+        
+        <!-- Redirect to Letterboxd Button -->
+        <button id="primeRedirectBtn" style="width: 100%; padding: 10px; background: linear-gradient(90deg, #ff8000 0%, #00e054 100%); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 13px; font-family: 'Inter', sans-serif; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(255, 128, 0, 0.3);">
+          <span id="primeRedirectBtnText">Letterboxd'a Yönlendir</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+        </button>
+      </div>
+
+      <!-- MUBI Film Tespit Edildi Uyarısı -->
+      <div id="mubiAlertContainer" style="display: none; margin-bottom: 16px; background: linear-gradient(135deg, rgba(26, 26, 26, 0.15) 0%, rgba(20, 24, 28, 0.95) 100%); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 14px; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); animation: slideDown 0.3s ease-out;">
+        <div style="position: absolute; top: -20px; right: -20px; width: 60px; height: 60px; background: rgba(255, 255, 255, 0.1); filter: blur(20px); border-radius: 50%;"></div>
+        
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <!-- Number Alert Badge -->
+          <div style="width: 28px; height: 28px; background: #000000; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); animation: pulseMubi 2s infinite;">
+            <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+          </div>
+          <div style="flex-grow: 1; overflow: hidden;">
+            <div id="mubiAlertHeading" style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: #ffffff; font-weight: 700; margin-bottom: 2px;">MUBI'de Açık Film</div>
+            <div id="mubiMovieTitle" style="font-size: 14px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;" title="">Film Adı</div>
+          </div>
+        </div>
+        
+        <!-- Redirect to Letterboxd Button -->
+        <button id="mubiRedirectBtn" style="width: 100%; padding: 10px; background: linear-gradient(90deg, #ff8000 0%, #00e054 100%); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 13px; font-family: 'Inter', sans-serif; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(255, 128, 0, 0.3);">
+          <span id="mubiRedirectBtnText">Letterboxd'a Yönlendir</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+        </button>
+      </div>
+
+      <!-- Disney+ Film Tespit Edildi Uyarısı -->
+      <div id="disneyAlertContainer" style="display: none; margin-bottom: 16px; background: linear-gradient(135deg, rgba(0, 99, 229, 0.15) 0%, rgba(20, 24, 28, 0.95) 100%); border: 1px solid rgba(0, 99, 229, 0.3); border-radius: 12px; padding: 14px; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); animation: slideDown 0.3s ease-out;">
+        <div style="position: absolute; top: -20px; right: -20px; width: 60px; height: 60px; background: rgba(0, 99, 229, 0.25); filter: blur(20px); border-radius: 50%;"></div>
+        
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <!-- Number Alert Badge -->
+          <div style="width: 28px; height: 28px; background: #0063e5; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 10px rgba(0, 99, 229, 0.6); animation: pulseDisney 2s infinite;">
+            <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+          </div>
+          <div style="flex-grow: 1; overflow: hidden;">
+            <div id="disneyAlertHeading" style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: #3b82f6; font-weight: 700; margin-bottom: 2px;">Disney+'te Açık Film</div>
+            <div id="disneyMovieTitle" style="font-size: 14px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;" title="">Film Adı</div>
+          </div>
+        </div>
+        
+        <!-- Redirect to Letterboxd Button -->
+        <button id="disneyRedirectBtn" style="width: 100%; padding: 10px; background: linear-gradient(90deg, #ff8000 0%, #00e054 100%); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 13px; font-family: 'Inter', sans-serif; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(255, 128, 0, 0.3);">
+          <span id="disneyRedirectBtnText">Letterboxd'a Yönlendir</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+        </button>
+      </div>
+
+      <!-- Apple TV+ Film Tespit Edildi Uyarısı -->
+      <div id="appleAlertContainer" style="display: none; margin-bottom: 16px; background: linear-gradient(135deg, rgba(30, 30, 30, 0.25) 0%, rgba(20, 24, 28, 0.95) 100%); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 14px; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); animation: slideDown 0.3s ease-out;">
+        <div style="position: absolute; top: -20px; right: -20px; width: 60px; height: 60px; background: rgba(255, 255, 255, 0.1); filter: blur(20px); border-radius: 50%;"></div>
+        
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <!-- Number Alert Badge -->
+          <div style="width: 28px; height: 28px; background: #1a1a1a; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); animation: pulseApple 2s infinite;">
+            <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+          </div>
+          <div style="flex-grow: 1; overflow: hidden;">
+            <div id="appleAlertHeading" style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: #ffffff; font-weight: 700; margin-bottom: 2px;">Apple TV+'ta Açık Film</div>
+            <div id="appleMovieTitle" style="font-size: 14px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;" title="">Film Adı</div>
+          </div>
+        </div>
+        
+        <!-- Redirect to Letterboxd Button -->
+        <button id="appleRedirectBtn" style="width: 100%; padding: 10px; background: linear-gradient(90deg, #ff8000 0%, #00e054 100%); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 13px; font-family: 'Inter', sans-serif; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(255, 128, 0, 0.3);">
+          <span id="appleRedirectBtnText">Letterboxd'a Yönlendir</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+        </button>
+      </div>
+
+      <!-- IMDb Film Tespit Edildi Uyarısı -->
+      <div id="imdbAlertContainer" style="display: none; margin-bottom: 16px; background: linear-gradient(135deg, rgba(245, 197, 24, 0.15) 0%, rgba(20, 24, 28, 0.95) 100%); border: 1px solid rgba(245, 197, 24, 0.3); border-radius: 12px; padding: 14px; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); animation: slideDown 0.3s ease-out;">
+        <div style="position: absolute; top: -20px; right: -20px; width: 60px; height: 60px; background: rgba(245, 197, 24, 0.25); filter: blur(20px); border-radius: 50%;"></div>
+        
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <!-- Number Alert Badge -->
+          <div style="width: 28px; height: 28px; background: #f5c518; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 10px rgba(245, 197, 24, 0.6); animation: pulseImdb 2s infinite;">
+            <svg viewBox="0 0 24 24" fill="#000" width="14" height="14"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+          </div>
+          <div style="flex-grow: 1; overflow: hidden;">
+            <div id="imdbAlertHeading" style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: #f5c518; font-weight: 700; margin-bottom: 2px;">IMDb'de Açık Film</div>
+            <div id="imdbMovieTitle" style="font-size: 14px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;" title="">Film Adı</div>
+          </div>
+        </div>
+        
+        <!-- Redirect to Letterboxd Button -->
+        <button id="imdbRedirectBtn" style="width: 100%; padding: 10px; background: linear-gradient(90deg, #ff8000 0%, #00e054 100%); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 13px; font-family: 'Inter', sans-serif; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(255, 128, 0, 0.3);">
+          <span id="imdbRedirectBtnText">Letterboxd'a Yönlendir</span>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+        </button>
+      </div>
+
+      <div id="normalSearchContainer">
+        <input type="text" id="searchInput" placeholder="Film adı yazın..." autofocus>
+        <button id="searchBtn">Ara</button>
+        <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 8px;">
+          <span id="historyToggleText" style="font-size: 11px; color: var(--text-muted); cursor: pointer; text-decoration: underline; transition: color 0.2s;">Geçmiş</span>
+        </div>
+      </div>
+
+      <!-- Geçmiş Ekranı -->
+      <div id="recentSearchesContainer" style="display: none; margin-top: 16px; animation: fadeIn 0.3s ease; border-top: 1px solid var(--card-border); padding-top: 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <span id="recentTitle" style="font-size: 13px; color: var(--text-muted); font-weight: 500;">Son Aramalar</span>
+          <span id="clearHistoryBtn" style="color: #ff5555; font-size: 11px; cursor: pointer; text-decoration: underline; transition: color 0.2s;">Temizle</span>
+        </div>
+        <div id="recentList" style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <!-- JS ile eklenecek -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Ayarlar Paneli -->
+    <div id="settingsView">
+      <div class="settings-header">
+        <button id="backBtn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        </button>
+        <span class="settings-title" id="settingsTitle">Ayarlar</span>
+      </div>
+
+      <div class="setting-row">
+        <span class="setting-label" id="labelImdbRating">IMDb Puanı (Letterboxd)</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggleImdbRating" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-row">
+        <span class="setting-label" id="labelGoogle">Google Entegrasyonu</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggleGoogle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-row">
+        <span class="setting-label" id="labelImdbIcon">IMDb'de Letterboxd İkonu</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggleImdbIcon" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-row">
+        <span class="setting-label" id="labelAutoRedirect">Direkt Yönlendir (Streaming/IMDb)</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggleAutoRedirect">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <a id="fullSettingsLink">&#9881; Tüm Ayarlar &rarr;</a>
+    </div>
   </div>
-  <input type="text" id="searchInput" placeholder="Film adı yazın..." autofocus>
-  <button id="searchBtn">Ara</button>
+
   <script src="popup.js"></script>
 </body>
-
 </html>
+
+
+
+

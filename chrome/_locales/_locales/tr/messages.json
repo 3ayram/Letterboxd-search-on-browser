@@ -1,0 +1,92 @@
+{
+  "extensionName": {
+    "message": "Letterboxd için IMDb Puanı ve Arama"
+  },
+  "extensionDescription": {
+    "message": "Herhangi bir sayfadan Letterboxd'da arama yapın ve Letterboxd film sayfalarında IMDb puanlarını görün."
+  },
+  "searchOnLetterboxd": {
+    "message": "\"%s\" metni Letterboxd ile ara"
+  },
+  "popupTitle": {
+    "message": "Letterboxd Arama"
+  },
+  "popupPlaceholder": {
+    "message": "Film adı yazın..."
+  },
+  "popupSearchBtn": {
+    "message": "Ara"
+  },
+  "optTitle": {
+    "message": "Letterboxd Arama Ayarları"
+  },
+  "optHeading": {
+    "message": "Eklenti Ayarları"
+  },
+  "optImdbLabel": {
+    "message": "IMDb Butonu Davranışı"
+  },
+  "optImdbDesc": {
+    "message": "Letterboxd üzerindeki IMDb ikonuna tıkladığınızda IMDb sayfasını her zaman yeni sekmede açar."
+  },
+  "optLbLabel": {
+    "message": "Letterboxd Butonu Davranışı"
+  },
+  "optLbDesc": {
+    "message": "IMDb üzerindeki Letterboxd ikonuna tıkladığınızda Letterboxd sayfasını her zaman yeni sekmede açar."
+  },
+  "optCtxLabel": {
+    "message": "Sağ Tık (Arka Plan) Davranışı"
+  },
+  "optCtxDesc": {
+    "message": "Seçtiğiniz metni sağ tık ile arattığınızda, arama sayfasını arka planda (sessizce) açar."
+  },
+  "optGoogleLabel": {
+    "message": "Google Arama Entegrasyonu"
+  },
+  "optGoogleDesc": {
+    "message": "Google arama sonuçlarında görünen IMDb linklerinin yanına Letterboxd ikonu ekler."
+  },
+  "optShowIconLbLabel": {
+    "message": "Letterboxd Sayfasında IMDb İkonunu Göster"
+  },
+  "optShowIconImdbLabel": {
+    "message": "IMDb Sayfasında Letterboxd İkonunu Göster"
+  },
+  "optGoogleNewTabLabel": {
+    "message": "Google'da Letterboxd Butonu Davranışı"
+  },
+  "optGoogleNewTabDesc": {
+    "message": "Google'daki Letterboxd ikonuna tıkladığınızda sayfayı her zaman yeni sekmede açar."
+  },
+  "optSaveBtn": {
+    "message": "Ayarları Kaydet"
+  },
+  "optSaved": {
+    "message": "Ayarlar kaydedildi!"
+  },
+  "imdbVotesLabel": {
+    "message": "IMDb oylaması"
+  },
+  "popupImdbRatingLabel": {
+    "message": "IMDb Puanı (Letterboxd)"
+  },
+  "popupAllSettings": {
+    "message": "Tüm Ayarlar"
+  },
+  "popupImdbIconLabel": {
+    "message": "IMDb'de Letterboxd İkonu"
+  },
+  "popupGoogleLabel": {
+    "message": "Google Entegrasyonu"
+  },
+  "openInLetterboxd": {
+    "message": "Letterboxd'da Aç"
+  },
+  "openInImdb": {
+    "message": "IMDb'de Aç"
+  },
+  "histogramTooltip": {
+    "message": "%1 yıldız: %2 oy (%3%)"
+  }
+}

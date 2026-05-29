@@ -1,44 +1,77 @@
-// IMDb URL'sinden ID'yi alıyoruz (Örn: tt1234567)
-const match = window.location.pathname.match(/\/title\/(tt\d+)/);
+// dormant content script that only responds when popup asks or when state changes.
+// This has absolutely ZERO DOM injection and ZERO click event listeners on IMDb.
 
-if (match && match[1]) {
-  const imdbId = match[1];
+let lastImdbId = "";
+let lastImdbTitle = "";
+let currentImdbState = false;
+
+const extractImdbId = (url) => {
+  const titleMatch = url.match(/\/title\/(tt\d+)/);
+  if (titleMatch) return titleMatch[1];
+  const nameMatch = url.match(/\/name\/(nm\d+)/);
+  if (nameMatch) return nameMatch[1];
+  return "";
+};
+
+const checkAndSendImdbState = () => {
+  const url = window.location.href;
+  const currentId = extractImdbId(url);
   
-  const injectIcon = () => {
-    // IMDb'nin başlık etiketini bul. Farklı tasarımlara karşı genel h1 seçicisini de yedek olarak tutuyoruz.
-    const titleElement = document.querySelector('h1[data-testid="hero__pageTitle"]') || document.querySelector('h1');
-    
-    // Eğer başlık bulunduysa ve ikonumuzu henüz eklemediysek
-    if (titleElement && !document.getElementById('letterboxd-imdb-icon')) {
-      const link = document.createElement('a');
-      link.id = 'letterboxd-imdb-icon';
-      link.href = `https://letterboxd.com/imdb/${imdbId}`;
-      chrome.storage.sync.get({ lbNewTab: true }, function(items) {
-        link.target = items.lbNewTab ? '_blank' : '_self';
+  if (!currentId) {
+    if (currentImdbState) {
+      currentImdbState = false;
+      lastImdbId = "";
+      lastImdbTitle = "";
+      chrome.runtime.sendMessage({
+        action: "setImdbBadge",
+        text: ""
       });
-      link.title = 'Letterboxd\'da Aç';
-      
-      const img = document.createElement('img');
-      // İkonun tarayıcı uzantısındaki güvenli yolunu alıyoruz
-      img.src = chrome.runtime.getURL('icon32.png'); 
-      img.alt = 'Letterboxd';
-      
-      link.appendChild(img);
-      
-      // İkonu başlığın tam sonuna (yanına) ekle
-      titleElement.appendChild(link);
     }
-  };
+    return;
+  }
 
-  // Sayfa ilk yüklendiğinde çalıştır
-  injectIcon();
-  
-  // IMDb bazen sayfa yenilemeden içeriği dinamik yükleyebilir. Bunu yakalamak için Observer kullanıyoruz.
-  const observer = new MutationObserver(() => {
-    if (!document.getElementById('letterboxd-imdb-icon')) {
-      injectIcon();
-    }
-  });
-  
-  observer.observe(document.body, { childList: true, subtree: true });
-}
+  let title = "";
+  const titleElement = document.querySelector('h1[data-testid="hero__pageTitle"]') || document.querySelector('h1');
+  if (titleElement) {
+    title = titleElement.innerText || titleElement.textContent || "";
+  }
+
+  title = title.trim();
+
+  if (currentId) {
+    lastImdbId = currentId;
+    lastImdbTitle = title;
+  }
+
+  const movieActive = !!currentId;
+
+  if (movieActive !== currentImdbState) {
+    currentImdbState = movieActive;
+    
+    chrome.runtime.sendMessage({
+      action: "setImdbBadge",
+      text: movieActive ? "\u25b6" : ""
+    });
+  }
+};
+
+// Check initially
+checkAndSendImdbState();
+
+const observer = new MutationObserver(() => {
+  checkAndSendImdbState();
+});
+
+observer.observe(document.body, {
+  childList: true,
+  subtree: true
+});
+
+// Listen to popup messaging
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === "checkImdbMovie") {
+    checkAndSendImdbState();
+    sendResponse({ movieActive: currentImdbState, imdbId: lastImdbId, title: lastImdbTitle });
+  }
+  return true;
+});
